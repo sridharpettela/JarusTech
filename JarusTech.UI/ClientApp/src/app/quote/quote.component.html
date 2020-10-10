@@ -1,0 +1,103 @@
+<div class="col-12">
+  <h4 id="tableLabel" style="background-color:aqua">Quote</h4>
+</div>
+<div class='content col-12'>
+  <div class="row  col-12">
+    <div class='column col-4'> Quote: <b>{{ quote.quoteNumber }}</b></div>
+    <div class='column  col-4'>
+      Status:
+      <select>
+        <option>Pending</option>
+        <option>Issued</option>
+      </select>
+    </div>
+    <div class='column  col-4'>  Applicant: <b>{{ quote.applicant }}</b></div>
+  </div>
+</div>
+<div class='content col-12'>
+  <div class="row  col-12">
+    <div class='column col-4'> Quote Date: <b>{{ quote.quoteDate | date: 'dd/MM/yyyy' }}</b></div>
+    <div class='column col-4'> Effective Date: <b>{{ quote.quoteEffDate | date: 'dd/MM/yyyy' }}</b></div>
+    <div class='column col-4'>
+      <input type="radio" value="BAS" name="options">Basic - <b>$680.00</b>
+      <input type="radio" value="PREF" name="options">Preferred - <b>
+        $850.00
+      </b>
+      <input type="radio" value="PREM" name="options">Premier - <b>$1050.00</b>
+    </div>
+  </div>
+</div>
+
+<div class="col-12">
+  <h4 id="tableLabel" style="background-color:aqua">Search</h4>
+</div>
+<form [formGroup]="searchForm" (ngSubmit)="searchPerson()">
+  <div class='content col-12'>
+    <div class="row  col-12">
+      <div class='column col-4'> First Name:  <input type="text" formControlName="firstName" /></div>
+      <div class='column  col-4'>
+        Last Name: <input type="text" formControlName="lastName" />
+      </div>
+      <div class='column  col-4'>
+        <button type="submit" class="btn btn-primary">Search</button>
+      </div>
+    </div>
+  </div>
+</form>
+<div *ngIf="persons">
+  <table class='table table-striped' aria-labelledby="tableLabel">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>DoB</th>
+        <th>Add to Quote</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let psn of persons">
+        <td>{{psn.title}} {{ psn.firstName }} {{ psn.lastName }}</td>
+        <td>{{ psn.dob  | date: 'dd/MM/yyyy' }}</td>
+        <td>
+          <a (click)="addInsPerson(psn.personId)" class="btn btn-black">
+            Select
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div *ngIf="showErrorMsg">
+  {{showErrorMsg}}
+</div>
+<br />
+<br />
+<div *ngIf="insPersons" class="content col-12">
+  <div class="column col-6" *ngFor="let inPrsn of insPersons">
+    <div class="row col-12">
+      <h5 id="tableLabel" style="background-color:aqua">Additional Insured</h5>
+    </div>
+    <div>
+      First Name:
+    </div>
+    <div>
+      <input type="text" value="{{inPrsn.person.title}} {{ inPrsn.person.firstName }} {{ inPrsn.person.lastName }}" />
+    </div>
+    <div>
+      Date of Birth:
+    </div>
+    <div>
+      <input type="text" value="{{inPrsn.person.dob | date: 'dd/MM/yyyy'}}" />
+    </div>
+    <div>
+      Coverage:
+    </div>
+    <div>
+      <input type="text" value="{{inPrsn.coverage}}" />
+    </div>
+    <div>
+      <a (click)="deleteInsPerson(inPrsn.insPersonId)" class="btn btn-delete">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30320.27
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JarusTech.UI", "JarusTech.UI\JarusTech.UI.csproj", "{94B3FC9C-7BEA-4A77-85F8-E2D70CE8836B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JarusTech.API", "JarusTech.API\JarusTech.API.csproj", "{E6E19453-D8F5-4D8A-9C41-2FE39497A96A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{94B3FC9C-7BEA-4A77-85F8-E2D70CE8836B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94B3FC9C-7BEA-4A77-85F8-E2D70CE8836B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94B3FC9C-7BEA-4A77-85F8-E2D70CE8836B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94B3FC9C-7BEA-4A77-85F8-E2D70CE8836B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6E19453-D8F5-4D8A-9C41-2FE39497A96A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6E19453-D8F5-4D8A-9C41-2FE39497A96A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6E19453-D8F5-4D8A-9C41-2FE39497A96A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6E19453-D8F5-4D8A-9C41-2FE39497A96A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A7FA8340-CEEA-4A94-9D1D-64B28605D985}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,26 @@
+<h1 id="tableLabel" style="background-color:aqua">Quotes</h1>
+
+<p *ngIf="!quotes"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="quotes">
+  <thead>
+    <tr>
+      <th>Quote Number</th>
+      <th>Applicant</th>
+      <th>Quote Date</th>
+      <th>Quote Effective Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let quo of quotes">
+      <td>
+        <a [routerLink]="['/quote', quo.quoteNumber]">
+          <span>{{ quo.quoteNumber }}</span>
+        </a>
+      </td>
+      <td>{{ quo.applicant }}</td>
+      <td>{{ quo.quoteDate | date: 'dd/MM/yyyy' }}</td>
+      <td>{{ quo.quoteEffDate | date: 'dd/MM/yyyy' }}</td>
+    </tr>
+  </tbody>
+</table>

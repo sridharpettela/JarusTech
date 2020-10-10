@@ -3,3 +3,8 @@
 ################################################################################
 
 /.vs/JarusTech/config
+/.vs/JarusTech
+/JarusTech.API/.config
+/JarusTech.API/bin
+/JarusTech.API/obj
+/JarusTech.API/Properties
